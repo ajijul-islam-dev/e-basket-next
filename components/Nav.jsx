@@ -2,12 +2,13 @@
 import { Button, Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '/assets/images/logo/logo.webp'
 import { CgMenuLeft } from "react-icons/cg";
 import LoginBtn from './LoginBtn';
 import { BsMinecartLoaded } from "react-icons/bs";
 import SearchBox from './SearchBox';
+import MobileDrawer from './MobileDrawer';
 
 
 const navItems = [
@@ -25,11 +26,18 @@ const navItems = [
     }
 ]
 
+
 const Nav = () => {
+    const [openMobileDrawer, setOpenMobileDrawer] = useState(false)
+
+    const handleMobileDrawer = () => {
+        setOpenMobileDrawer(true)
+    }
+
     return (
-        <Navbar rounded border className='bg-acent md:bg-white'>
+        <Navbar rounded border className='bg-acent md:bg-white fixed left-0 right-0 m-auto top-0 z-50'>
             <div className="flex items-center gap-3">
-                <span className='text-2xl md:hidden text-white'><CgMenuLeft /></span>
+                <span onClick={() => handleMobileDrawer()} className='text-2xl md:hidden text-white'><CgMenuLeft /></span>
                 <div className="flex md:hidden">
                     <LoginBtn />
                 </div>
@@ -51,6 +59,7 @@ const Nav = () => {
             </div>
             <div className="flex md:hidden text-2xl text-white"><BsMinecartLoaded /></div>
             <div className="md:hidden w-full mt-5"><SearchBox /></div>
+            <MobileDrawer openMobileDrawer={openMobileDrawer} setOpenMobileDrawer={setOpenMobileDrawer} />
         </Navbar>
     );
 };

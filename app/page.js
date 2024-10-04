@@ -1,9 +1,12 @@
+import Footer from "@/components/Footer";
 import { Button } from "flowbite-react";
 
 export default function Home() {
   return (
-    <div>
-     <h1 className="text-acent text-3xl font-bold">Hello Next</h1>
+    <div className="pt-20 h-[200vh]">
+     Home page
+     <p>hdcbsdbfgvjksfbhvjkzsdhgvdjfhjvkhsdfjvhdjkfhvb sjkvbhdfjkvhfdjkvhkjfbhjkvbhksdfvbhjkdfbhgjbh</p>
+     <Footer/>
     </div>
   );
 }
