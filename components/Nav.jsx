@@ -9,6 +9,7 @@ import LoginBtn from './LoginBtn';
 import { BsMinecartLoaded } from "react-icons/bs";
 import SearchBox from './SearchBox';
 import MobileDrawer from './MobileDrawer';
+import LoginModal from './LoginModal';
 
 
 const navItems = [
@@ -29,9 +30,14 @@ const navItems = [
 
 const Nav = () => {
     const [openMobileDrawer, setOpenMobileDrawer] = useState(false)
+    const [openLoginModal,setOpenLoginModal] = useState(false)
 
     const handleMobileDrawer = () => {
         setOpenMobileDrawer(true)
+    }
+
+    const handleLoginModal = ()=>{
+        setOpenLoginModal(true)
     }
 
     return (
@@ -39,7 +45,7 @@ const Nav = () => {
             <div className="flex items-center gap-3">
                 <span onClick={() => handleMobileDrawer()} className='text-2xl md:hidden text-white'><CgMenuLeft /></span>
                 <div className="flex md:hidden">
-                    <LoginBtn />
+                    <LoginBtn handleLoginModal={handleLoginModal}/>
                 </div>
 
                 <Link className='md:flex hidden' href="/">
@@ -55,11 +61,12 @@ const Nav = () => {
                 </div>
             </div>
             <div className=" hidden md:flex md:order-2">
-                <LoginBtn />
+                <LoginBtn handleLoginModal={handleLoginModal}/>
             </div>
             <div className="flex md:hidden text-2xl text-white"><BsMinecartLoaded /></div>
             <div className="md:hidden w-full mt-5"><SearchBox /></div>
             <MobileDrawer openMobileDrawer={openMobileDrawer} setOpenMobileDrawer={setOpenMobileDrawer} />
+            <LoginModal openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal}/>
         </Navbar>
     );
 };

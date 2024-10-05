@@ -1,10 +1,10 @@
 import { Button } from 'flowbite-react';
 import React from 'react';
 
-const LoginBtn = () => {
+const LoginBtn = ({handleLoginModal}) => {
     return (
         <div>
-            <Button className='bg-acent hover:bg-hover-acent'>Login</Button>
+            <Button onClick={()=> handleLoginModal()} className='bg-acent hover:bg-hover-acent'>Login</Button>
         </div>
     );
 };

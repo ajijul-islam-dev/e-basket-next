@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
           <div className="hidden md:block md:col-span-2 h-screen border overflow-y-scroll pt-20 overflow-x-hidden">
             <Sidebar/>
           </div>
-          <div className="md:col-span-8 md:h-screen md:overflow-y-scroll">{children}</div>
+          <div className="md:col-span-8 md:h-screen md:overflow-y-scroll pt-20">{children}</div>
         </div>
       </body>
     </html>
