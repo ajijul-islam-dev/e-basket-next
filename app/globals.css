@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.slick-dots li {
+    margin: 0 0px !important; /* Adjust the value to control the gap */
+  }
+
+Banner Sliders Dots
+.slick-dots li button:before {
+    font-size: 18px !important;
+    color: rgb(160, 160, 160) !important;
+    opacity: 1 !important;
+}
+
+
+.slick-dots li.slick-active button:before {
+    color: rgb(255, 0, 0) !important;
+    opacity: 1 !important;
+}
+

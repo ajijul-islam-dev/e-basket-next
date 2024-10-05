@@ -15,6 +15,9 @@ import {
     HiUsers,
 } from "react-icons/hi";
 import Sidebar from './Sidebar';
+import logo from '/assets/images/logo/logo.webp'
+import Image from 'next/image';
+import Link from 'next/link';
 
 const MobileDrawer = ({ openMobileDrawer, setOpenMobileDrawer }) => {
 
@@ -22,11 +25,8 @@ const MobileDrawer = ({ openMobileDrawer, setOpenMobileDrawer }) => {
     const handleClose = () => setOpenMobileDrawer(false);
     return (
         <>
-            {/* <div className="flex min-h-[50vh] items-center justify-center">
-                <Button onClick={() => setIsOpen(true)}>Show navigation</Button>
-            </div> */}
             <Drawer backdrop={true} open={openMobileDrawer} onClose={handleClose}>
-                <Drawer.Header title="MENU" titleIcon={() => <></>} />
+                <Drawer.Header title={<Link href={"/"}><Image height={100} width={100} alt='logo' src={logo} /></Link>} titleIcon={() => <></>} />
                 <Drawer.Items>
                     <Sidebar
                         aria-label="Sidebar with multi-level dropdown example"

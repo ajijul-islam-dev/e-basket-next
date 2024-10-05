@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Nav />
-        <div className="container mx-auto md:grid md:grid-cols-10">
+        <div className="md:w-[99%] mx-auto md:grid md:grid-cols-10">
           <div className="hidden md:block md:col-span-2 h-screen border overflow-y-scroll pt-20 overflow-x-hidden">
             <Sidebar/>
           </div>
